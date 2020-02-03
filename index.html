@@ -25,7 +25,7 @@
         crossorigin="anonymous"></script>
     
         <!-- Google Fonts -->
-        
+        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     
         <!-- MY CSS LINKS -->
         <link rel="stylesheet" href="./assets/css/style.css">
@@ -36,10 +36,27 @@
 </head>
 
 <body>
-    <h2>All the buttons should be here: </h2>
+    <div class="jumbotron"></div>
+
+    <h2>Give me some gifs!!</h2>
         <div id="btn-holder"></div>
-        
-    <div id="gifs-appear-here"></div>
+        <div id="add-own">
+            <form>
+                <div class="col-auto">
+                    <label for="search-query">Search for your own here: </label>
+                    <input type="text" class="form-control" id="search-query">
+                </div>
+                <div class="col-auto">
+                    <button type="submit" id="submit" class="btn btn-primary mb-2">Submit</button>
+                </div>
+            </form>
+        </div>
+
+    <div class="container">
+        <div class="row">
+            <div id="gifs-appear-here"></div>
+        </div>
+    </div>
 
 
 
