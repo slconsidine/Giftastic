@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
     // array of all the button names
-    var buttons = ["cat", "dog", "bird"];
+    var buttons = ["The Office", "Michael Scott", "Jim Halpert", "Dwight Schrute", "Stanley", "Jim and Pam"];
 
     // for loop that creates a button for each item in the buttons array
     for (i=0; i<buttons.length; i++) {
@@ -38,9 +38,12 @@ $(document).ready(function() {
                 animalDiv.append(animalImage);
                 $("#gifs-appear-here").prepend(animalDiv);
             };
+            // process that occurs when a gif is clicked
             $(".gif").on("click", function() {
+                // creates a variable to hold that state of the gif (play/pause)
                 var state = $(this).attr("data-state");
                 console.log(state);
+                // if it's clicked and the state is still, gif will start to play
                 if (state === "still") {
                   $(this).attr("src", $(this).attr("data-animate"));
                   $(this).attr("data-state", "animate");
