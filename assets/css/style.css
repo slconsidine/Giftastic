@@ -1,13 +1,26 @@
 body {
     font-family: 'Roboto', sans-serif;
+    background-color: rgba(0,0,0,0);
+    clear: both;
 }
 
 .jumbotron {
-    padding-bottom: 225px;
-    background-image: url(../images/dunder-mifflin.jpg);
-    background-repeat: none;
-    background-position-x: center;
+    background-color: black;
+    text-align: center;
+    height: 295px;
+}
 
+.banner {
+    margin-top: -65px;
+    clear: both;
+}
+
+.container-fluid{
+    display: flexbox;
+    text-align: center;
+}
+
+img {
 }
 
 button {

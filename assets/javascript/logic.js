@@ -1,16 +1,32 @@
 $(document).ready(function() {
-
+    
     // array of all the button names
     var buttons = ["The Office", "Michael Scott", "Jim Halpert", "Dwight Schrute", "Stanley", "Jim and Pam"];
 
     // for loop that creates a button for each item in the buttons array
-    for (i=0; i<buttons.length; i++) {
-        $("#btn-holder").append("<button class='premade' id='" + buttons[i] + "'>" + buttons[i] + "</button>");
+    function renderButtons() {
+        $("#btn-holder").empty();
+        for (var i=0; i<buttons.length; i++) {
+            $("#btn-holder").append("<button class='premade' id='" + buttons[i] + "'>" + buttons[i] + "</button>");
+        }
+        console.log("here")
     }
 
+    renderButtons();
+
+    // add a new user search button
+    $("#submit").on("click", function() {
+        event.preventDefault();
+        var searchTerm = $("#search-query").val()
+        console.log(searchTerm);
+        buttons.push(searchTerm);
+        renderButtons();
+        console.log("made a new button")
+        // $("#btn-holder").append("<button class='premade' id='" + searchTerm+ "'>" + searchTerm + "</button>");
+    })  
 
     // process that occurs when a button is clicked
-    $(".premade").on("click", function(){
+    $(document).on("click", ".premade", function(){
         // clears div so that new ones can be added and aren't just adding on and on 
         $("#gifs-appear-here").empty();
         // creates a variable with what button is calling by using the button's id
@@ -57,13 +73,5 @@ $(document).ready(function() {
             });
         });
     });
-
-    // add a new user search button
-    $("#submit").on("click", function() {
-        event.preventDefault();
-        var searchTerm = $("#search-query").val()
-        console.log(searchTerm);
-        $("#btn-holder").append("<button class='premade' id='" + searchTerm+ "'>" + searchTerm + "</button>");
-    })    
 
 });
